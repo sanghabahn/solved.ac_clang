@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main(void)
+{
+	char str[1000001];
+	int count[30];
+	int cnt = 0;
+	int max, max_num;
+	
+	scanf("%s", str);
+	
+	for(int i = 0; i<strlen(str); i++)
+	{
+		for(int j = i+1; j<strlen(str); j++)
+		{
+			if (str[i] == str[j])
+				cnt++;
+		}
+		count[i] = cnt;
+	}
+	
+	max = count[0];
+	max_num = 0;
+	for(int i = 1; i < strlen(str); i++)
+	{
+		if (max < count[i])
+		{
+			max = count[i];
+			max_num = i;
+		}
+		else if (max == count[i])
+		{
+			return printf("?\n");
+		}
+	}
+	printf("%c\n", toupper(str[max_num]));
+	
+	return 0;
+}
