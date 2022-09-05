@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(void)
+{
+	int a, b, c, mul, len, res;
+	double pwr;
+	mul = a * b * c;
+	
+	scanf("%d", &a);
+	scanf("%d", &b);
+	scanf("%d", &c);	
+	
+	for (int i = 0;;i++)
+	{
+		if (mul / pow(10,i) == 0)
+			break;
+		else
+			len++;
+	}
+	int cnt[10];
+	for (int i = 0; i < len; i++)
+	{
+		pwr = pow(10,i);
+		res = mul / (int)pwr;
+		cnt[res]++;
+	}
+	for (int i = 0; i < 10; i++)
+		printf("%d\n", cnt[i]);
+	return 0;
+}
