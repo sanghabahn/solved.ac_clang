@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main(void)
+{
+    int num[10];
+	int rmd[10];
+	int cnt[42] = {0, };
+	int count = 0;
+	
+	for(int i = 0; i<10; i++)
+	{
+		scanf("%d", &num[i]);
+		rmd[i] = (num[i] % 42);
+		cnt[rmd[i]]++;
+	}
+	
+	for (int i = 0; i < 42; i++)
+	{
+		if (cnt[i] != 0)
+			count++;
+			
+	}
+	printf("%d\n", count);
+	return 0;
+}
