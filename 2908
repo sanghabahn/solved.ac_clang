@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main(void)
+{
+    int num1, num2;
+	int fdg_o, sdg_o, tdg_o;
+	int fdg_t, sdg_t, tdg_t;
+    scanf("%d %d", &num1, &num2);
+    
+    fdg_o = (num1 % 10);
+    sdg_o = (((num1 % 100) - fdg_o) / 10);
+    tdg_o = ((num1 - 10 * sdg_o - fdg_o) / 100);
+    
+    fdg_t = (num2 % 10);
+    sdg_t = (((num2 % 100) - fdg_t) / 10);
+    tdg_t = ((num2 - 10 * sdg_t - fdg_t) / 100);
+    
+    if (fdg_o > fdg_t)
+		printf("%d%d%d", fdg_o,sdg_o,tdg_o);
+	else
+		if(sdg_o > sdg_t)
+			printf("%d%d%d", fdg_o,sdg_o,tdg_o);
+		else
+			if(tdg_o > tdg_t)
+				printf("%d%d%d", fdg_o,sdg_o,tdg_o);
+			else
+				printf("%d%d%d", fdg_t,sdg_t,tdg_t);
+	
+	return 0;
+}
